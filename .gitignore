@@ -1,33 +1,59 @@
-.DS_Store
-._*
-Thumbs.db
-Desktop.ini
-
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
+# =========================
+# Subject / provided files
+# =========================
 *.pdf
+*.tar.gz
+*.zip
+*.txt
 
+# Provided Day 00 resources
+Django_0_Initiation/d00/
+
+# =========================
+# Vagrant
+# =========================
+.vagrant/
+
+
+# =========================
+# Python
+# =========================
 __pycache__/
 *.py[cod]
+
+# Virtual environments
 .venv/
 venv/
 env/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-.coverage.*
-htmlcov/
 
+
+# =========================
+# Django
+# =========================
+*.log
+db.sqlite3
+staticfiles/
+
+
+# =========================
+# Environment / secrets
+# =========================
 .env
 .env.*
 !.env.example
-!.env.sample
-!.env.template
 
-db.sqlite3
-db.sqlite3-journal
-*.log
+
+# =========================
+# IDE / OS
+# =========================
+.vscode/
+.idea/
+.DS_Store
+
+
+# =========================
+# Temporary files
+# =========================
+*.swp
+*.swo
+*~
