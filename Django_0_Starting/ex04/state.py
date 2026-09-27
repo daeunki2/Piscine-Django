@@ -16,12 +16,13 @@ def find_state(user_input):
         "CO": "Denver"
     }
 
-    state_code = states.get(user_input)
-
-    if state_code is None:
-        print("Unknown state")
-    else:
-        print(capital_cities[state_code])
+    for c_key, c_value in capital_cities.items():
+        if user_input == c_value:
+            for s_key, s_value in states.items():
+                if c_key == s_value:
+                    print(f"{s_key}")
+                    return True
+    print("Unknown capital city")
 
 
 if __name__ == '__main__':
