@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -30,10 +30,14 @@ apt-get install -y \
     xfce4-goodies \
     lightdm
 
-echo "=== Installing VirtualBox guest integration ==="
+echo "=== Installing Korean input and fonts ==="
 apt-get install -y \
-    virtualbox-guest-utils \
-    virtualbox-guest-x11
+    ibus \
+    ibus-hangul \
+    fonts-noto-cjk
+
+echo "=== Installing Zsh ==="
+apt-get install -y zsh
 
 echo "=== Installing Google Chrome ==="
 
@@ -51,8 +55,12 @@ echo "=== Configuring graphical boot ==="
 systemctl set-default graphical.target
 systemctl enable lightdm
 
+echo "=== Setting Zsh as default shell for vagrant ==="
+chsh -s "$(command -v zsh)" vagrant
+
 echo "=== Finished ==="
 
 python3 --version
 pip3 --version
+zsh --version
 google-chrome --version
